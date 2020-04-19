@@ -55,11 +55,31 @@ namespace MyprojecsApp
             Console.Write("\n");
 
 
-            Console.WriteLine($"Длина массив - StrArr после добавления элемент с конца массива: {ArrayHelper.Push(ref StrArr, "six")}");
+            Console.WriteLine($"Длина массив - StrArr после добавления элемент с конца массива: {ArrayHelper.Push(ref StrArr, "Six")}");
             Console.WriteLine($"Длина массив - IntArr после добавления элемент с конца массива: {ArrayHelper.Push(ref IntArr,    60)}");
             Console.WriteLine($"Длина массив - DblArr после добавления элемент с конца массива: {ArrayHelper.Push(ref DblArr,   6.5)}");
-            Console.WriteLine($"Длина массив - DecArr после добавления элемент с конца массива: {ArrayHelper.Push(ref DecArr,   6.5m)}");
-            Console.WriteLine($"Длина массив - FloArr после добавления элемент с конца массива: {ArrayHelper.Push(ref FloArr,   6.5f)}");
+            Console.WriteLine($"Длина массив - DecArr после добавления элемент с конца массива: {ArrayHelper.Push(ref DecArr,  6.5m)}");
+            Console.WriteLine($"Длина массив - FloArr после добавления элемент с конца массива: {ArrayHelper.Push(ref FloArr,  6.5f)}");
+
+
+            Console.Write("\n");
+
+
+            Console.WriteLine($"Удаленный элемент массива - StrArr: {ArrayHelper.Shift(ref StrArr)}");
+            Console.WriteLine($"Удаленный элемент массива - IntArr: {ArrayHelper.Shift(ref IntArr)}");
+            Console.WriteLine($"Удаленный элемент массива - DblArr: {ArrayHelper.Shift(ref DblArr)}");
+            Console.WriteLine($"Удаленный элемент массива - DecArr: {ArrayHelper.Shift(ref DecArr)}");
+            Console.WriteLine($"Удаленный элемент массива - FloArr: {ArrayHelper.Shift(ref FloArr)}");
+
+            Console.Write("\n");
+
+            Console.WriteLine($"Длина массив - StrArr после добавления один элемент в начало: {ArrayHelper.UnShift(ref StrArr, "Zero")}");
+            Console.WriteLine($"Длина массив - IntArr после добавления один элемент в начало: {ArrayHelper.UnShift(ref IntArr,     00)}");
+            Console.WriteLine($"Длина массив - DblArr после добавления один элемент в начало: {ArrayHelper.UnShift(ref DblArr,    0.5)}");
+            Console.WriteLine($"Длина массив - DecArr после добавления один элемент в начало: {ArrayHelper.UnShift(ref DecArr,   0.5m)}");
+            Console.WriteLine($"Длина массив - FloArr после добавления один элемент в начало: {ArrayHelper.UnShift(ref FloArr,   0.5f)}");
+
+
 
         }
     }
@@ -140,6 +160,83 @@ namespace MyprojecsApp
         {
             arrey = arrey.Concat(new float[] { New_El }).ToArray();
             int LengthArr = arrey.Length;
+            return LengthArr;
+        }
+
+        //Метод Shift()
+        public static string Shift(ref string[] arrey)
+        {
+            string Rem_Fir_El = arrey[0];
+            arrey = arrey.Where((item, index) => index != 0).ToArray();
+            return Rem_Fir_El;
+        }
+
+        public static int Shift(ref int[] arrey)
+        {
+            int Rem_Fir_El = arrey[0];
+            arrey = arrey.Where((item, index) => index != 0).ToArray();
+            return Rem_Fir_El;
+        }
+
+        public static double Shift(ref double[] arrey)
+        {
+            double Rem_Fir_El = arrey[0];
+            arrey = arrey.Where((item, index) => index != 0).ToArray();
+            return Rem_Fir_El;
+        }
+
+        public static decimal Shift(ref decimal[] arrey)
+        {
+            decimal Rem_Fir_El = arrey[0];
+            arrey = arrey.Where((item, index) => index != 0).ToArray();
+            return Rem_Fir_El;
+        }
+
+        public static float Shift(ref float[] arrey)
+        {
+            float Rem_Fir_El = arrey[0];
+            arrey = arrey.Where((item, index) => index != 0).ToArray();
+            return Rem_Fir_El;
+        }
+
+        //Метод UnShift()
+        public static int UnShift(ref string[] arrey, string New_El)
+        {
+            var NewArrey = new string[arrey.Length + 1];
+            Array.Copy(arrey, 0, NewArrey, 1, arrey.Length);
+            int LengthArr = NewArrey.Length;
+            return LengthArr;
+        }
+
+        public static int UnShift(ref int[] arrey, int New_El)
+        {
+            var NewArrey = new int[arrey.Length + 1];
+            Array.Copy(arrey, 0, NewArrey, 1, arrey.Length);
+            int LengthArr = NewArrey.Length;
+            return LengthArr;
+        }
+
+        public static int UnShift(ref double[] arrey, double New_El)
+        {
+            var NewArrey = new double[arrey.Length + 1];
+            Array.Copy(arrey, 0, NewArrey, 1, arrey.Length);
+            int LengthArr = NewArrey.Length;
+            return LengthArr;
+        }
+
+        public static int UnShift(ref decimal[] arrey, decimal New_El)
+        {
+            var NewArrey = new decimal[arrey.Length + 1];
+            Array.Copy(arrey, 0, NewArrey, 1, arrey.Length);
+            int LengthArr = NewArrey.Length;
+            return LengthArr;
+        }
+
+        public static int UnShift(ref float[] arrey, float New_El)
+        {
+            var NewArrey = new float[arrey.Length + 1];
+            Array.Copy(arrey, 0, NewArrey, 1, arrey.Length);
+            int LengthArr = NewArrey.Length;
             return LengthArr;
         }
         
